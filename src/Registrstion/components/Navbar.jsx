@@ -14,13 +14,13 @@ function Navbar() {
                             sx={{ flexGrow: 1 }}>
                             Dummy-Shop
                         </Typography>
-                        <Button component={NavLink} to='/' sx={{ color: "white",textTransform: 'none' }} style={({ isActive }) => {
+                        <Button component={NavLink} to='/' sx={{ color: "white"}} style={({ isActive }) => {
                             return { background: isActive ? '#6d1b7b' : '' }
                         }}>Home</Button>
-                        <Button component={NavLink} to='/contact' sx={{ color: "white",textTransform: 'none' }} style={({ isActive }) => {
+                        <Button component={NavLink} to='/contact' sx={{ color: "white"}} style={({ isActive }) => {
                             return { background: isActive ? '#6d1b7b' : '' }
                         }}>Contact</Button>
-                        <Button component={NavLink} to='/login' sx={{ color: "white",textTransform: 'none' }} style={({ isActive }) => {
+                        <Button component={NavLink} to='/login' sx={{ color: "white"}} style={({ isActive }) => {
                             return { background: isActive ? '#6d1b7b' : '' }
                         }}>Login</Button>
                     </Toolbar>
