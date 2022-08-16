@@ -3,6 +3,7 @@ import { Grid, Card, Typography, Tabs, Tab, Box } from '@mui/material'
 import Pic1 from '../../../image/Pic1.png';
 import { display } from '@mui/system';
 import UserLogin from './UserLogin';
+import Registration from './Registration';
 
 const TabPanel = (props) => {
   const { children, value, index } = props;
@@ -52,7 +53,7 @@ function LoginReg() {
               <TabPanel value={value} index={0}>
                 <UserLogin />
               </TabPanel>
-              <TabPanel value={value} index={1}>Registration</TabPanel>
+              <TabPanel value={value} index={1}><Registration/></TabPanel>
             </Box>
           </Card>
         </Grid>
