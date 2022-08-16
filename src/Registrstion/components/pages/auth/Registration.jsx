@@ -22,14 +22,16 @@ export default function Registration() {
             password_confirmation: data.get('password_confirmatio'),
             tc: data.get('tc')
         }
-        //console.log(actualData);
+        
+
         // Validation
         if ( actualData.name && actualData.email && actualData.password && actualData.password_confirmation && actualData.tc) {
             console.log(actualData)
             // using actuaData we can send data to backend
 
-            document.getElementById('registration-form').reset();
+            
             setError({ status: true, msg: 'Registration Succesfull', type: 'success' });
+            document.getElementById('registration-form').reset();
             Navigate('/')
         } else {
             setError({ status: true, msg: 'All fields Are Required', type: 'error' })
