@@ -20,10 +20,11 @@ function UserLogin() {
       email: data.get('email'),
       password: data.get('password')
     }
-    //console.log(actualData);
+    console.log(actualData);
     // Validation
     if(actualData.email && actualData.password){
-      console.log(actualData)
+      // console.log(actualData)
+      // console.log(actualData)
       // using actuaData we can send data to backend
       
       document.getElementById('login-from').reset();
@@ -35,7 +36,7 @@ function UserLogin() {
   }
   return (
     <>
-      <Box component='form' noValidate sx={{ mt: 1 }} id='login-from' onSubmit={handleSubmit}>
+      <Box component='password-reset-form' noValidate sx={{ mt: 1 }} id='login-from' onSubmit={handleSubmit}>
         <TextField
           margin='normal'
           required
@@ -62,7 +63,7 @@ function UserLogin() {
             Login
           </Button>
         </Box>
-        <NavLink to='/'>Forgot Password?</NavLink>
+        <NavLink to='/sendPasswordResetEmail'>Forget Password</NavLink>
         {error.status ? <Alert severity={error.type}>{error.msg}</Alert> : ''}
       </Box>
     </>

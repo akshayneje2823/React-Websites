@@ -7,36 +7,41 @@ export default function Registration() {
         status: false,
         msg: "",
         type: ""
-    })
+    });
 
-    const Navigate = useNavigate()
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
 
         e.preventDefault();
-        // Getting Data
+// Getting Data
+
         const data = new FormData(e.currentTarget);
         const actualData = {
+            name:data.get('name'),
             email: data.get('email'),
             password: data.get('password'),
-            password_confirmation: data.get('password_confirmatio'),
+            password_confirmation: data.get('password_confirmation'),
             tc: data.get('tc')
-        }
-        
+        };
 
-        // Validation
-        if ( actualData.name && actualData.email && actualData.password && actualData.password_confirmation && actualData.tc) {
-            console.log(actualData)
-            // using actuaData we can send data to backend
 
-            
-            setError({ status: true, msg: 'Registration Succesfull', type: 'success' });
+// Validation
+
+        if (actualData.name && actualData.email && actualData.password && actualData.password_confirmation && actualData.tc) {
+            // using actualData we can send data to backend
+            console.log(actualData);
+            if(actualData.password === actualData.password_confirmation){
+                setError({ status: true, msg: 'Registration Succesfull..!', type: 'success' });
             document.getElementById('registration-form').reset();
-            Navigate('/')
+            navigate('/')
+            }else{
+                setError({ status: true, msg: 'Password did not match.', type: 'error' });
+            }
         } else {
-            setError({ status: true, msg: 'All fields Are Required', type: 'error' })
-        }
-    }
+            setError({ status: true, msg: 'All fields are required.', type: 'error' });
+        };
+    };
     return (
         <>
             <Box component='form' noValidate sx={{ mt: 1 }} id='registration-form' onSubmit={handleSubmit}>
