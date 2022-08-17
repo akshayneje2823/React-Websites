@@ -34,7 +34,7 @@ export default function Registration() {
             if(actualData.password === actualData.password_confirmation){
                 setError({ status: true, msg: 'Registration Succesfull..!', type: 'success' });
             document.getElementById('registration-form').reset();
-            navigate('/')
+            navigate('/dashboard')
             }else{
                 setError({ status: true, msg: 'Password did not match.', type: 'error' });
             }

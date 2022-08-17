@@ -11,19 +11,19 @@ function SendPasswordResetEmail() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-       // Getting Data
+        // Getting Data
 
         const data = new FormData(e.currentTarget);
         const actualData = {
             email: data.get('email'),
         }
-        
-       // Validation
+
+        // Validation
 
         if (actualData.email) {
             console.log(actualData);
-            document.getElementById('password-reset-from').reset();
-            setError({ status: true, msg: 'Email Sent', type: 'success' });
+            document.getElementById('password-reset-form').reset();
+            setError({ status: true, msg: 'Email Sent.Check your Email !!', type: 'success' });
         } else {
             setError({ status: true, msg: 'Please Provide Valid Email', type: 'error' })
         }
@@ -32,26 +32,32 @@ function SendPasswordResetEmail() {
         <>
             <Grid container justifyContent='center'>
                 <Grid item sm={6} xs={12}>
-                <Box component='form' noValidate sx={{ mt: 1 }} id='password-reset-from' onSubmit={handleSubmit}>
-                <TextField
-                    margin='normal'
-                    required
-                    fullWidth
-                    id='email'
-                    name='email'
-                    label='Enter your Email'
-                    autoFocus
-                />
-                <Box textAlign='center'>
-                    <Button
-                        type='submit'
-                        variant='contained'
-                        sx={{ mt: 3, mb: 2, px: 5 }}>
-                        Send
-                    </Button>
-                </Box>
-                {error.status ? <Alert severity={error.type}>{error.msg}</Alert> : ''}
-            </Box>
+                    <h1>Reset Password</h1>
+                    <Box
+                        component='form'
+                        noValidate sx={{ mt: 1 }}
+                        id='password-reset-form'
+                        onSubmit={handleSubmit}
+                    >
+                        <TextField
+                            margin='normal'
+                            required
+                            fullWidth
+                            id='email'
+                            name='email'
+                            label='Enter your Email'
+                            autoFocus
+                        />
+                        <Box textAlign='center'>
+                            <Button
+                                type='submit'
+                                variant='contained'
+                                sx={{ mt: 3, mb: 2, px: 5 }}>
+                                Send
+                            </Button>
+                        </Box>
+                        {error.status ? <Alert severity={error.type}>{error.msg}</Alert> : ''}
+                    </Box>
                 </Grid>
             </Grid>
         </>

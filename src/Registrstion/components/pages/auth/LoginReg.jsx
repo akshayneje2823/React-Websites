@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Grid, Card, Typography, Tabs, Tab, Box } from '@mui/material'
+import { Grid, Card,  Tabs, Tab, Box } from '@mui/material'
 import Pic1 from '../../../image/Pic1.png';
-import { display } from '@mui/system';
+// import { display } from '@mui/system';
 import UserLogin from './UserLogin';
 import Registration from './Registration';
 

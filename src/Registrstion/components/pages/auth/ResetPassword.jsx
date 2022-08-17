@@ -28,14 +28,16 @@ function ResetPassword() {
                 console.log(actualData);
                 document.getElementById('password-reset-email-from').reset();
                 setError({ status: true, msg: 'Done.Succesfully redirecting to login page...', type: 'success' })
+
                 setTimeout(() => {
                     navigate("/login")
                 }, 3000);
-            }else{
+
+            } else {
                 setError({ status: true, msg: 'Password did not match.', type: 'error' });
             }
         } else {
-            setError({ status: true, msg: 'Please Provide Valid Email', type: 'error' })
+            setError({ status: true, msg: 'All fields are required', type: 'error' })
         }
     }
     return (
@@ -56,7 +58,7 @@ function ResetPassword() {
                             id='password'
                             name='password'
                             type='password'
-                            label='Enter your Password'
+                            label='Enter your New Password'
                         />
                         <TextField
                             margin='normal'
@@ -72,7 +74,7 @@ function ResetPassword() {
                                 type='submit'
                                 variant='contained'
                                 sx={{ mt: 3, mb: 2, px: 5 }}>
-                                Send
+                                Save
                             </Button>
                         </Box>
                         {error.status ? <Alert severity={error.type}>{error.msg}</Alert> : ''}

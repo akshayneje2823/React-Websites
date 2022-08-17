@@ -6,6 +6,7 @@ import Contact from './components/pages/Contact';
 import LoginReg from './components/pages/auth/LoginReg';
 import SendPasswordResetEmail from './components/pages/auth/SendPasswordResetEmail';
 import ResetPassword from './components/pages/auth/ResetPassword';
+import Dashboard from './components/pages/auth/Dashboard';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path='sendPasswordResetEmail' element={<SendPasswordResetEmail/>}></Route>
             <Route path='reset' element={<ResetPassword/>}></Route>
             </Route>
+            <Route path='/dashboard' element={<Dashboard/>}></Route>
         </Routes>
     </Router>
     </> 

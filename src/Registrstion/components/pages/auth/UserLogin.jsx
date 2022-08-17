@@ -1,42 +1,34 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import { TextField, Button, Box, Alert } from '@mui/material'
-import { NavLink, useNavigate} from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 function UserLogin() {
   const [error, setError] = useState({
-    status:false,
+    status: false,
     msg: "",
     type: ""
   })
-
-  const Navigate = useNavigate()
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
-
     e.preventDefault();
-    // Getting Data
     const data = new FormData(e.currentTarget);
     const actualData = {
       email: data.get('email'),
-      password: data.get('password')
+      password: data.get('password'),
     }
-    console.log(actualData);
-    // Validation
-    if(actualData.email && actualData.password){
-      // console.log(actualData)
-      // console.log(actualData)
-      // using actuaData we can send data to backend
-      
-      document.getElementById('login-from').reset();
-      setError({status:true,msg:'Login Succesfull',type:'success'});
-      Navigate('/')
-    }else{
-      setError({status:true,msg:'All fields Are Required',type:'error'})
+    if (actualData.email && actualData.password) {
+      console.log(actualData);
+
+      document.getElementById('login-form').reset()
+      setError({ status: true, msg: "Login Success", type: 'success' })
+      navigate('/dashboard')
+    } else {
+      setError({ status: true, msg: "All Fields are Required", type: 'error' })
     }
   }
   return (
     <>
-      <Box component='password-reset-form' noValidate sx={{ mt: 1 }} id='login-from' onSubmit={handleSubmit}>
+      <Box component='login-form' noValidate sx={{ mt: 1 }} id='login-from' onSubmit={handleSubmit}>
         <TextField
           margin='normal'
           required
