@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './pagination/App';
+import App from './project-setUp/App';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
