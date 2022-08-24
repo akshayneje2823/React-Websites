@@ -1,0 +1,40 @@
+.side-bar{
+    flex: 3;
+    margin: 20px;
+    padding-bottom: 30px;
+    background-color: #fdfbfb;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.side-bar-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.side-bar-title{
+    margin: 10px;
+    padding: 5px;
+    width: 80%;
+    border-top: 1px solid #a7a4a4;
+    border-bottom: 1px solid #a7a4a4;
+    font-family: 'Verela Round',sans-serif;
+    font-size: 12px;
+    color: #222;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+}
+.side-bar-item > img{
+    margin-top: 15px;
+}
+.side-bar-item > p{
+    padding: 30px;
+}
+.side-bar-list{
+    list-style: none;
+    margin-bottom: 30;
+    display: flex;
+}
