@@ -1,0 +1,45 @@
+.login {
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('https://media.istockphoto.com/photos/login-interface-username-and-password-picture-id458040107?b=1&k=20&m=458040107&s=170667a&w=0&h=9TEhX6BNRV8MuAKV0luxzBvk4YWa7WEGifc_LUtCnWU=');
+    background-size: cover;
+}
+
+.login-title {
+    font-size: 50px;
+
+}
+.login-form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.login-form > label{
+    margin: 10px 0;
+}
+.login-input{
+    padding: 10px;
+    background: white;
+    border: none;
+}
+.login-btn{
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: lightcoral;
+    border: none;
+    color: white;
+    padding: 10px;
+}
+.login-register-btn{
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: rgb(59, 155, 155);
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    color: white;
+}
