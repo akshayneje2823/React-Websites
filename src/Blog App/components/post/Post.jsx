@@ -3,7 +3,7 @@ import './post.css'
 export default function Post() {
   return (
     <div className='post'>
-        <img src="https://media.istockphoto.com/photos/alphabet-letter-wooden-blocks-with-words-give-in-child-and-parents-picture-id1199796265?b=1&k=20&m=1199796265&s=170667a&w=0&h=Qmbcy6dxn4viEAie5O1WkEH5gG3QJWfh0uNQ7JSlkpU=" alt="img" />
+        <img src="https://images.unsplash.com/photo-1601588759900-6215271553cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGNyb3dkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="img" />
         <div className="post-info">
             <div className="post-cats">
                 <span className='post-cat'>Music</span>
