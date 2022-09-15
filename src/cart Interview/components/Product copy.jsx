@@ -12,10 +12,9 @@ function Product({ state, dispatch }) {
             width: "80%",
         }}
         >
-            <h1>Hello</h1>
             {
-                products.map((prod)=>{
-                   return( <div
+                products.map((prod) => {
+                    <div
                         key={prod.id}
                         style={{
                             display: 'flex',
@@ -26,18 +25,18 @@ function Product({ state, dispatch }) {
                             marginTop: 10,
                             gap: 10,
                         }}
-                        >
-                             <img
+                    ><h1>All Products</h1>
+                        <img
                             src={prod.thumbnail}
                             alt={prod.title}
                             style={{
                                 height: 200, objectFit: 'cover'
                             }}
                         />
-                        </div>
-                )})
+
+                    </div>
+                })
             }
-                
         </div>
     )
 }
