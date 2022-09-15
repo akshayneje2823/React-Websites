@@ -6,14 +6,14 @@ import { cardReducer } from './reducers/cartReducer';
 
 
 export default function App() {
-  const [state, dispatch] = useReducer(cardReducer,{
-    products : [],
-    card : []
+  const [state, dispatch] = useReducer(cardReducer, {
+    products: [],
+    cart: []
   });
 
   // console.log(state)
   const loadProduct = async () => {
-    let {data} = await Axios.get("https://dummyjson.com/products");
+    let { data } = await Axios.get("https://dummyjson.com/products");
     // console.log(data.products)
 
     dispatch({
@@ -29,7 +29,7 @@ export default function App() {
   return (
     <div style={{ display: "flex" }}>
       <Product state={state} dispatch={dispatch} />
-      <Cart />
+      <Cart state={state} dispatch={dispatch} />
     </div>
   )
 }

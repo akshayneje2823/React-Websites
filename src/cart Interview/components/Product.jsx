@@ -12,10 +12,9 @@ function Product({ state, dispatch }) {
             width: "80%",
         }}
         >
-            <h1>Hello</h1>
             {
-                products.map((prod)=>{
-                   return( <div
+                products.map((prod) => {
+                    return (<div
                         key={prod.id}
                         style={{
                             display: 'flex',
@@ -26,18 +25,65 @@ function Product({ state, dispatch }) {
                             marginTop: 10,
                             gap: 10,
                         }}
-                        >
-                             <img
+                    >
+                        <img
                             src={prod.thumbnail}
                             alt={prod.title}
                             style={{
                                 height: 200, objectFit: 'cover'
                             }}
                         />
+                        <div style={{ display: 'flex', justifyContent: "space-between" }}>
+                            <span>{prod.title}</span>
+                            <span>${prod.price}</span>
                         </div>
-                )})
+                        {
+                            cart.some(p => p.id === prod.id) ? <button
+                                style={{
+                                    padding: 5,
+                                    border: 0,
+                                    borderRadius: 5,
+                                    backgroundColor: "#e53935",
+                                    color: "white"
+                                }}
+                                onClick={() => {
+                                    dispatch({
+                                        type: "REMOVE_FROM_CART",
+                                        payload: prod
+                                    })
+                                }}
+                            >
+                                Remove Form Cart
+                            </button> : <button
+                                style={{
+                                    padding: 5,
+                                    border: 0,
+                                    borderRadius: 5,
+                                    backgroundColor: "green",
+                                    color: "white"
+                                }}
+                                onClick={() => {
+                                    dispatch({
+                                        type: "ADD_TO_CART",
+                                        payload: {
+                                            id: prod.id,
+                                            title: prod.title,
+                                            thumbnail: prod.thumbnail,
+                                            qty: 1,
+                                            price: prod.price
+
+                                        }
+                                    })
+                                }}
+                            >
+                                Add To Cart
+                            </button>
+                        }
+                    </div>
+                    )
+                })
             }
-                
+
         </div>
     )
 }
