@@ -1,10 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 
 function Cart({ state, dispatch }) {
+  const [total, setTotal] = useState();
 
   const { cart } = state;
   console.log(cart)
-  const [total, setTotal] = useState()
+
+  const changeQty = (id,qty) => {
+    dispatch({
+      type : "CHANGE_CART_QTY",
+      payload : {
+        id,
+        qty,
+      }
+    })
+  };
+
+  useEffect(() => {
+    setTotal(
+      cart.reduce((acc,curr)=> acc + Number(curr.price)*curr.qty,0))
+  }, [cart])
+  
 
   return (
     <div
@@ -53,6 +69,23 @@ function Cart({ state, dispatch }) {
                   <span>{prod.title}</span>
                   <b>$ {prod.price}</b>
                 </div>
+              </div>
+              <div style={{ display: 'flex', alignSelf: 'center', gap: 10 }}>
+                <button
+                  onClick={
+                    () => changeQty(prod.id, prod.qty - 1)
+                  }
+                >
+                  -
+                </button>
+                <span>{prod.qty}</span>
+                <button
+                  onClick={
+                    () => changeQty(prod.id, prod.qty + 1)
+                  }
+                >
+                  +
+                </button>
               </div>
             </div>
           ))
