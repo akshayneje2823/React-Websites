@@ -5,3 +5,6 @@ export default function App() {
     <div>App</div>
   )
 }
+
+
+// https://api.jikan.moe/v4/anime?q=naruto&limit=20
