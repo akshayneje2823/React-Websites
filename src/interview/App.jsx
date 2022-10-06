@@ -41,11 +41,11 @@ export default function App() {
     <div>
       <h1>Data</h1>
       {
-        data.map((newData)=>{
+        data.map((newData) => {
           return <div key={newData.id}>
             {newData.id}.{newData.title}
-            <button onClick={()=>deleteHandler(newData.id)}>delete</button>
-            </div>
+            <button onClick={() => deleteHandler(newData.id)}>delete</button>
+          </div>
         })
       }
     </div>

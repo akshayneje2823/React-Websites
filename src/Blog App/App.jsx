@@ -9,18 +9,18 @@ import Login from './components/pages/Login and Register/Login'
 import Register from './components/pages/Login and Register/Register'
 
 function App() {
-  const user = false;
-  console.log(user)
+  const user = true;
   return (
     <>
       <Router>
         <TopBar />
         <Routes>
           <Route exact path='/' element={<Home />} />
-          <Route path='/register' element={user ? <Home/> : <Register/> }/>
-          <Route path='/login' element={user ? <Home/> : <Login />} />
-          <Route path='/write' element={user ? <Write/> : <Register/>} />
-          <Route path='/setting' element={user ? <Setting /> : <Register/>} />
+          <Route path='/register' element={user ? <Home/> : <Register/>}/>
+          {/* <Route path='/register' element={user ? <Register /> :<Home/> } /> */}
+          <Route path='/login' element={user ? <Home /> : <Login />} />
+          <Route path='/write' element={user ? <Write /> : <Register />} />
+          <Route path='/setting' element={user ? <Setting /> : <Register />} />
           <Route path='/post/:postID' element={<SinglePage />} />
         </Routes>
       </Router>
